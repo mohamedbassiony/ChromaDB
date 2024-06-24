@@ -31,7 +31,7 @@ chroma_client = chromadb.Client()
 # import
 import chromadb.utils.embedding_functions as embedding_functions
 # use directly
-google_ef  = embedding_functions.GoogleGenerativeAiEmbeddingFunction(api_key="AIzaSyB8WBLScws4KhJLxT1ssL1PBBYDewqWUho")
+google_ef  = embedding_functions.GoogleGenerativeAiEmbeddingFunction(api_key="YOUR_API_KEY")
 # pass documents to query for .add and .query
 collection = chroma_client.create_collection(name="my_collection", embedding_function=google_ef)
 
