@@ -38,7 +38,9 @@ load_dotenv(".env")
 GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
 
 # use directly
+
 google_ef  = embedding_functions.GoogleGenerativeAiEmbeddingFunction(api_key=GOOGLE_API_KEY)
+
 # pass documents to query for .add and .query
 collection = chroma_client.create_collection(name="my_collection", embedding_function=google_ef)
 
