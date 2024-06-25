@@ -30,8 +30,17 @@ chroma_client = chromadb.Client()
 
 # import
 import chromadb.utils.embedding_functions as embedding_functions
+
+from dotenv import load_dotenv
+import os
+
+load_dotenv(".env")
+GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
+
 # use directly
-google_ef  = embedding_functions.GoogleGenerativeAiEmbeddingFunction(api_key="YOUR_API_KEY")
+
+google_ef  = embedding_functions.GoogleGenerativeAiEmbeddingFunction(api_key=GOOGLE_API_KEY)
+
 # pass documents to query for .add and .query
 collection = chroma_client.create_collection(name="my_collection", embedding_function=google_ef)
 
@@ -43,7 +52,7 @@ collection.add(
 )
 
 results = collection.query(
-    query_texts=["shrimp"],
+    query_texts=["sea food"],
     n_results=5,
     include=['documents']
 )
