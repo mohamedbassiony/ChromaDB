@@ -2,3 +2,6 @@ chromadb==0.5.3
 pandas
 sentence-transformers
 google-generativeai
+pillow
+open-clip-torch
+matplotlib
